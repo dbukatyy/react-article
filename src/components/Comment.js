@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import CommentForm from './CommentForm';
 
 export default class Comment extends Component {
 	constructor(props) {
@@ -28,6 +29,7 @@ export default class Comment extends Component {
 				<button onClick = {this.toggleComments}>
 					{this.state.isOpen ? 'hide' : 'show'} comments
 				</button>
+				<CommentForm />
 			</div>
 		)
 	}

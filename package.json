@@ -27,7 +27,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "concurrently": "^3.5.0",
-    "css-loader": "^0.28.4",
+    "css-loader": "^0.28.11",
     "style-loader": "^0.18.2",
     "webpack": "^2.0.0",
     "webpack-dev-server": "^2.0.0"
@@ -37,7 +37,7 @@
     "immutable": "^3.8.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.0",
-    "react-day-picker": "^6.0.3",
+    "react-day-picker": "^6.2.1",
     "react-dom": "^15.5.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",

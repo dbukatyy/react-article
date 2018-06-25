@@ -14,14 +14,14 @@ export default class Article extends Component {
 				<h2>{article.title} ({article.date})</h2>
 				{this.goText()}
 				{isOpen ? <Comment comments = {article.comments} /> : null}
-				<button onClick = {this.openArticle}>{isOpen ? 'hide' : 'show'}</button>
+				<button onClick = {toggleOpen}>{isOpen ? 'hide' : 'show'}</button>
 			</section>
 		)
 	}
 
-	openArticle = id => {
-		this.props.toggleOpen(this.props.article.id);
-	}
+	// openArticle = id => {
+	// 	this.props.toggleOpen(this.props.article.id);
+	// }
 
 	goText = () => {
 		const {article, isOpen} = this.props;
