@@ -19,10 +19,6 @@ export default class Article extends Component {
 		)
 	}
 
-	// openArticle = id => {
-	// 	this.props.toggleOpen(this.props.article.id);
-	// }
-
 	goText = () => {
 		const {article, isOpen} = this.props;
 

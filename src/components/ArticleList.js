@@ -1,21 +1,19 @@
 import React, {Component} from 'react';
 import Article from './Article';
+import {connect} from 'react-redux';
+import {dateFilter} from '../AC';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import accordionToggle from '../decorators/accordionToggle';
 import 'react-day-picker/lib/style.css';
 
 
 class ArticleList extends Component {
-
-	state = {
-		from: undefined,
-      	to: undefined
-	}
 	
 	render() {
-		const { from, to } = this.state;
+		const {articles,openArticleId,toggleArticle, filter} = this.props;
+		const { from, to } = filter;
     	const modifiers = { start: from, end: to };
-		const {articles,openArticleId,toggleArticle} = this.props;
+    	
 		const articleElements = articles.map(article => {
 			return (
 				<li key = {article.id}>
@@ -44,10 +42,15 @@ class ArticleList extends Component {
 	};
 
 	handleDayClick = (day) => {
-    	const range = DateUtils.addDayToRange(day, this.state);
-    	this.setState(range);
+    	const range = DateUtils.addDayToRange(day, this.props.filter);
+    	this.props.dateFilter(range);
   	}
 
 }
 
-export default accordionToggle(ArticleList);
+export default connect(state => {
+	return {
+		articles: state.articles,
+		filter: state.filter
+	}
+}, {dateFilter})(accordionToggle(ArticleList));
